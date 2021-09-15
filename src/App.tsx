@@ -1,11 +1,13 @@
-import React from "react";
 import { GlobalStyle } from "./assets/styles/global";
+import { Dashboard } from "./components/Dashboard";
+import { Header } from "./components/Header";
 export function App() {
   return (
-    <div className="App">
-      <h2> Hello world</h2>
+    <>
+      <Header />
+      <Dashboard />
       <GlobalStyle />
-    </div>
+    </>
   );
 }
 
