@@ -1,7 +1,11 @@
-import { createServer } from 'miragejs';
+import { createServer, Model } from 'miragejs';
 
 export const fakeServer = () => {
   createServer({
+    models: {
+      transaction: Model,
+    },
+
     routes() {
       this.namespace = 'api';
       
@@ -11,7 +15,7 @@ export const fakeServer = () => {
 
       this.post('/transactions', (schema, request) => {
         const data = JSON.parse(request.requestBody);
-        return schema.create('transaction',data);
+        return schema.create('transaction', data);
       })
 
     }
