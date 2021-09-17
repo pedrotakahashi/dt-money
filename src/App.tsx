@@ -1,11 +1,13 @@
-import React from "react";
 import { GlobalStyle } from "./assets/styles/global";
+import { Dashboard } from "./components/Dashboard";
+import { Header } from "./components/Header";
+import { TransactionsProvider } from "./hooks/useTransactions";
 export function App() {
   return (
-    <div className="App">
-      <h2> Hello world</h2>
+    <TransactionsProvider>
+      <Header />
+      <Dashboard />
       <GlobalStyle />
-    </div>
+    </ TransactionsProvider>
   );
 }
-
